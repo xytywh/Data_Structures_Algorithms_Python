@@ -2,11 +2,18 @@
 import time
 
 start_time = time.time()
+# 第一次尝试
+# for i in range(0, 1001):
+#     for j in range(0, 1001):
+#         for k in range(0, 1001):
+#             if i + j + k == 1000 and i * i + j * j == k * k:
+#                 print("i,j,k:%d,%d,%d" % (i, j, k))
+# 第二次尝试
 for i in range(0, 1001):
     for j in range(0, 1001):
-        for k in range(0, 1001):
-            if i + j + k == 1000 and i * i + j * j == k * k:
-                print("i,j,k:%d,%d,%d" % (i, j, k))
+        k = 1000 - i - j
+        if i * i + j * j == k * k:
+            print("i,j,k:%d,%d,%d" % (i, j, k))
 end_time = time.time()
 print("times:%d" % (end_time - start_time))
 print("finished!")
