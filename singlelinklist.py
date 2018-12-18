@@ -38,6 +38,7 @@ class SingleLinkList():
         while cur != None:
             print(cur.elem, end=" ")
             cur = cur.next
+        print("")
 
     def add(self, item):
         """链表头部添加元素，头插法"""
@@ -57,16 +58,51 @@ class SingleLinkList():
             cur.next = node
 
     def insert(self, pos, item):
-        """指定位置添加元素"""
-        pass
+        """指定位置添加元素
+        :param pos 从0开始
+        """
+        if pos <= 0:
+            self.add(item)
+        elif pos > self.length() - 1:
+            self.append(item)
+        else:
+            pre = self.__head
+            count = 0
+            while count < (pos - 1):
+                count += 1
+                pre = pre.next
+            # 当循环退出时，pre指向pos-1位置
+            node = Node(item)
+            node.next = pre.next
+            pre.next = node
 
     def remove(self, item):
         """删除节点"""
-        pass
+        pre = None
+        cur = self.__head
+        while cur != None:
+            if cur.elem == item:
+                # 先判断此结点是否是头结点
+                if cur == self.__head:
+                    self.__head = cur.next
+                else:
+                    pre.next = cur.next
+                # 删除元素之后，退出
+                break
+            else:
+                pre = cur
+                cur = cur.next
+
+
 
     def search(self, item):
         """查找节点是否存在"""
-        pass
+        cur = self.__head
+        while cur != None:
+            if cur.elem == item:
+                return True
+            cur = cur.next
+        return False
 
 
 # 测试
@@ -84,4 +120,17 @@ if __name__ == "__main__":
     ll.append(4)
     ll.append(5)
     ll.append(6)
+    # 8 1 2 3 4 5 6
+    ll.insert(-1, 9)
+    ll.travel()
+    # 9 8 1 2 3 4 5 6
+    ll.insert(10, 7)
+    ll.travel()
+    # 9 8 1 2 3 4 5 6 7
+    ll.insert(2, 3)
+    ll.travel()
+    # 9 8 3 1 2 3 4 5 6 7
+    ll.travel()
+    print(ll.search(10))
+    ll.remove(9)
     ll.travel()
