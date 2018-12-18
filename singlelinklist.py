@@ -15,28 +15,46 @@ class SingleLinkList():
     """单链表"""
 
     def __init__(self, node=None):
-        # _head 下划线代表是私有的
-        self._head = node
+        # __head 双下划线代表是私有变量
+        self.__head = node
 
     def is_empty(self):
         """链表是否为空"""
-        pass
+        return self.__head == None
 
     def length(self):
         """链表长度"""
-        pass
+        # cur游标，用来移动遍历节点
+        cur = self.__head
+        count = 0
+        while cur != None:
+            count += 1
+            cur = cur.next
+        return count
 
     def travel(self):
         """遍历整个链表"""
-        pass
+        cur = self.__head
+        while cur != None:
+            print(cur.elem, end=" ")
+            cur = cur.next
 
     def add(self, item):
-        """链表头部添加元素"""
-        pass
+        """链表头部添加元素，头插法"""
+        node = Node(item)
+        node.next = self.__head
+        self.__head = node
 
     def append(self, item):
-        """链表尾部添加元素"""
-        pass
+        """链表尾部添加元素，尾插法"""
+        node = Node(item)
+        if self.is_empty():
+            self.__head = node
+        else:
+            cur = self.__head
+            while cur.next != None:
+                cur = cur.next
+            cur.next = node
 
     def insert(self, pos, item):
         """指定位置添加元素"""
@@ -49,3 +67,21 @@ class SingleLinkList():
     def search(self, item):
         """查找节点是否存在"""
         pass
+
+
+# 测试
+if __name__ == "__main__":
+    ll = SingleLinkList()
+    print(ll.is_empty())
+    print(ll.length())
+    ll.append(1)
+    print(ll.is_empty())
+    print(ll.length())
+
+    ll.add(8)
+    ll.append(2)
+    ll.append(3)
+    ll.append(4)
+    ll.append(5)
+    ll.append(6)
+    ll.travel()
