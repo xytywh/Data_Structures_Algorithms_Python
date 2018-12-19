@@ -131,4 +131,5 @@ if __name__ == "__main__":
     ll.travel()
     print(ll.search(10))
     ll.remove(9)
+    # 8 3 1 2 3 4 5 6 7
     ll.travel()
