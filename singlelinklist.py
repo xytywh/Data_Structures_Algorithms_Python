@@ -105,10 +105,11 @@ class SingleLinkList():
 
 # 测试
 if __name__ == "__main__":
-    ll = SingleLinkList()
+    ll = SingleLinkList(Node(80))
     print(ll.is_empty())
     print(ll.length())
     ll.append(1)
+    ll.travel()
     print(ll.is_empty())
     print(ll.length())
 
@@ -118,18 +119,13 @@ if __name__ == "__main__":
     ll.append(4)
     ll.append(5)
     ll.append(6)
-    # 8 1 2 3 4 5 6
     ll.insert(-1, 9)
     ll.travel()
-    # 9 8 1 2 3 4 5 6
     ll.insert(10, 7)
     ll.travel()
-    # 9 8 1 2 3 4 5 6 7
     ll.insert(2, 3)
     ll.travel()
-    # 9 8 3 1 2 3 4 5 6 7
     ll.travel()
     print(ll.search(10))
     ll.remove(9)
-    # 8 3 1 2 3 4 5 6 7
     ll.travel()
