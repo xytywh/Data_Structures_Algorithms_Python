@@ -105,6 +105,14 @@ class SingleLinkList():
 
 # 测试
 if __name__ == "__main__":
+    # node = Node(80)
+    # cur = node
+    # for i in range(10):
+    #     node.next = Node(i)
+    #     node = node.next
+    # while cur != None:
+    #     print(cur.elem)
+    #     cur = cur.next
     ll = SingleLinkList(Node(80))
     print(ll.is_empty())
     print(ll.length())
