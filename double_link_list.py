@@ -3,7 +3,7 @@ class Node():
 
     def __init__(self, elem):
         self.elem = elem
-        self.pre = None
+        self.prev = None
         self.next = None
 
 
@@ -40,8 +40,14 @@ class DoubleLinkList():
         """链表头部添加元素，头插法"""
         node = Node(item)
         node.next = self.__head
-        node.pre = None
+
+        # 下面两种不同顺序的执行情况是等价的
+
         self.__head = node
+        node.next.prev = Node
+
+        # self.__head.prev = node
+        # self.__head = node
 
     def append(self, item):
         """链表尾部添加元素，尾插法"""
@@ -53,7 +59,7 @@ class DoubleLinkList():
             while cur.next != None:
                 cur = cur.next
             cur.next = node
-            node.pre = cur
+            node.prev = cur
 
     def insert(self, pos, item):
         """指定位置添加元素
@@ -64,33 +70,44 @@ class DoubleLinkList():
         elif pos > self.length() - 1:
             self.append(item)
         else:
-            pre_ = self.__head
+            cur = self.__head
             count = 0
-            while count < (pos - 1):
+            while count < pos:
                 count += 1
-                pre_ = pre_.next
-            # 当循环退出时，pre指向pos-1位置
+                cur = cur.next
+            # 当循环退出时，cur指向pos位置
             node = Node(item)
-            node.next = pre_.next
-            node.pre = pre_
-            pre_.next = node
+            # 先不打断原有的链表顺序，先操作node本身
+            node.next = cur
+            node.prev = cur.prev
+
+            # 下面两种不同顺序的执行情况是等价的
+
+            cur.prev.next = node
+            cur.prev = node
+
+            # cur.prev = node
+            # node.prev.next = node
 
     def remove(self, item):
         """删除节点"""
-        pre_ = None
         cur = self.__head
         while cur != None:
             if cur.elem == item:
                 # 先判断此结点是否是头结点
                 if cur == self.__head:
+                    if cur.next:
+                        # 判断链表是否只有一个结点
+                        cur.next.prev = cur.prev
                     self.__head = cur.next
                 else:
-                    pre_.next = cur.next
-                    cur.pre = pre_
+                    cur.prev.next = cur.next
+                    # 判断删除的是否是尾结点
+                    if cur.next:
+                        cur.next.prev = cur.prev
                 # 删除元素之后，退出
                 break
             else:
-                pre_ = cur
                 cur = cur.next
 
     def search(self, item):
@@ -128,4 +145,3 @@ if __name__ == "__main__":
     print(ll.search(10))
     ll.remove(9)
     ll.travel()
-
