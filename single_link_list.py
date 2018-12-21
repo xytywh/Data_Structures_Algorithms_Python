@@ -103,8 +103,6 @@ class SingleLinkList():
         return False
 
 
-
-
 # 测试
 if __name__ == "__main__":
     # node = Node(80)
