@@ -117,7 +117,7 @@ class SingleCycleLinkList():
                     self.__head = cur.next
                     rear.next = self.__head
                 else:
-                    # 尾结点
+                    # 中间结点
                     pre.next = cur.next
                 # 删除元素之后，退出
                 # 这里一定要用return，退出整个函数体，用break会出错
