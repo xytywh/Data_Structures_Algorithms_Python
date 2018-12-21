@@ -30,6 +30,7 @@ class Stack():
         """判断栈是否为空"""
         # 下面两种写法更推荐第二种
         # return len(self.__list) == 0
+        # return self.__list == []
         return not self.__list
 
     def size(self):
