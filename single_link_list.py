@@ -135,7 +135,6 @@ if __name__ == "__main__":
     ll.travel()
     ll.insert(2, 3)
     ll.travel()
-    ll.travel()
     print(ll.search(10))
     ll.remove(9)
     ll.travel()
