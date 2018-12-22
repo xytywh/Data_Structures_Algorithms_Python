@@ -9,7 +9,7 @@ class Stack():
         # 要是用链表实现的话从头操作更好
 
     def pop(self):
-        """弹出栈顶元素"""
+        """弹出栈顶元素(并返回栈顶元素)"""
         if not self.__list:
             pass
             return
@@ -18,11 +18,9 @@ class Stack():
         # 要是用链表实现的话从头操作更好
 
     def peek(self):
-        """返回栈顶元素"""
-        # 下面两句是等价的
+        """返回栈顶元素(不是弹出栈顶元素)"""
         if self.__list:
-            return self.__list.pop()
-            # return self.__list[-1]
+            return self.__list[-1]
         else:
             return None
 
@@ -42,15 +40,21 @@ class Stack():
 
 if __name__ == "__main__":
     s = Stack()
+    s.push(1)
+    s.push(2)
     print(s.peek())
-    print(s.is_empty())
     print(s.size())
-    s.push(3)
-    s.push(4)
-    print(s.size())
-    print(s.is_empty())
-    s.pop()
+    print(2 == s.pop())
     print(s.peek())
-    s.pop()
-    print(s.peek())
-    s.pop()
+    # print(s.peek())
+    # print(s.is_empty())
+    # print(s.size())
+    # s.push(3)
+    # s.push(4)
+    # print(s.size())
+    # print(s.is_empty())
+    # s.pop()
+    # print(s.peek())
+    # s.pop()
+    # print(s.peek())
+    # s.pop()
