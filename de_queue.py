@@ -6,6 +6,7 @@ class DeQueue():
         """从队头加入一个item元素"""
         self.__list.insert(0, item)
 
+
     def add_rear(self, item):
         """从队尾加入一个item元素"""
         self.__list.append(item)
