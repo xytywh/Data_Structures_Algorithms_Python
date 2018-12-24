@@ -14,7 +14,6 @@ class Queue():
         return self.__list.pop(0)
         # return self.__list.pop()
 
-
     def is_empty(self):
         """判断一个队列是否为空"""
         return not self.__list
