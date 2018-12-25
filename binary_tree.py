@@ -49,21 +49,52 @@ class BinaryTree():
             if cur_node.rchild is not None:
                 queue.append(cur_node.rchild)
 
-    def depth_travel(self, node=self.root):
-        """二叉树的深度遍历"""
-        pass
+    # 树的三种深度遍历方式(递归)
+    def preorder(self, node):
+        """递归实现先序遍历"""
+        if node is None:
+            return
+        print(node.elem, end=" ")
+        self.preorder(node.lchild)
+        self.preorder(node.rchild)
+
+    def inorder(self, node):
+        """递归实现中序遍历"""
+        if node is None:
+            return
+        self.inorder(node.lchild)
+        print(node.elem, end=" ")
+        self.inorder(node.rchild)
+
+    def postorder(self, node):
+        """递归实现后序遍历"""
+        if node is None:
+            return
+        self.postorder(node.lchild)
+        self.postorder(node.rchild)
+        print(node.elem, end=" ")
 
 
 if __name__ == "__main__":
     bt = BinaryTree()
-    bt.add('A')
-    bt.add('B')
-    bt.add('G')
-    bt.add('C')
-    bt.add('F')
-    bt.add('H')
-    bt.add('I')
-    bt.add('D')
-    bt.add('E')
-    bt.add('J')
+    bt.add(0)
+    bt.add(1)
+    bt.add(2)
+    bt.add(3)
+    bt.add(4)
+    bt.add(5)
+    bt.add(6)
+    bt.add(7)
+    bt.add(8)
+    bt.add(9)
+    print("层次遍历:", end=" ")
     bt.breadth_travel()
+    print("")
+    print("先序遍历:", end=" ")
+    bt.preorder(bt.root)
+    print("")
+    print("中序遍历:", end=" ")
+    bt.inorder(bt.root)
+    print("")
+    print("后序遍历:", end=" ")
+    bt.postorder(bt.root)
