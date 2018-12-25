@@ -1,5 +1,5 @@
 def selection_sort(list_):
-    """选择排序"""
+    """选择排序(不稳定排序)"""
     for i in range(len(list_) - 1):
         for j in range(i + 1, len(list_)):
             if list_[i] > list_[j]:

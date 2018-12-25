@@ -1,5 +1,5 @@
 def bubble_sort(list_):
-    """冒泡排序"""
+    """冒泡排序(稳定排序)"""
     for i in range(len(list_) - 1):
         # 外层循环控制循环次数
         for j in range(len(list_) - i - 1):
