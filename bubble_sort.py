@@ -1,13 +1,3 @@
-# def bubble_sort(list_):
-#     """这应该也是一种冒泡排序，不同的是此算法每次把最小的元素放到开头"""
-#     for i in range(0, len(list_)):
-#         for j in range(i + 1, len(list_)):
-#             if list_[i] > list_[j]:
-#                 list_[i], list_[j] = list_[j], list_[i]
-#         print(list_)
-#     return list_
-
-
 def bubble_sort(list_):
     """冒泡排序"""
     for i in range(len(list_) - 1):
