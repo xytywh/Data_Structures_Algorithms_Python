@@ -19,27 +19,26 @@ def t_3():
         li += [i]
 
 
-# t_3和t_4是不同的，t_3不会创建新对象，t_4会创建一个新对象，t_3比t_4快得多。
-
+# t_3和t_4不会创建新对象，t_5会创建一个新对象，t_3比t_4快得多。
 
 def t_4():
+    li = []
+    for i in range(10000):
+        li.extend([i])
+
+
+def t_5():
     li = []
     for i in range(10000):
         li = li + [i]
 
 
-def t_5():
+def t_6():
     li = [i for i in range(10000)]
 
 
-def t_6():
+def t_7():
     li = list(range(10000))
-
-
-def t_5():
-    li = []
-    for i in range(10000):
-        li.extend([i])
 
 
 timer1 = timeit.Timer("t_1()", "from __main__ import t_1")
@@ -49,11 +48,13 @@ print("insert:", timer2.timeit(1000))
 timer3 = timeit.Timer("t_3()", "from __main__ import t_3")
 print("+=:", timer3.timeit(1000))
 timer4 = timeit.Timer("t_4()", "from __main__ import t_4")
-print("= +:", timer4.timeit(1000))
+print("extend:", timer4.timeit(1000))
 timer5 = timeit.Timer("t_5()", "from __main__ import t_5")
-print("[i for i in range]:", timer5.timeit(1000))
+print("= +:", timer5.timeit(1000))
 timer6 = timeit.Timer("t_6()", "from __main__ import t_6")
-print("list(range():", timer5.timeit(1000))
+print("[i for i in range]:", timer6.timeit(1000))
+timer7 = timeit.Timer("t_7()", "from __main__ import t_7")
+print("list(range():", timer7.timeit(1000))
 
 x = list(range(2000000))
 pop_zero = timeit.Timer("x.pop(0)", "from __main__ import x")
