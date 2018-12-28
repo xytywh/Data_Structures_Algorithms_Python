@@ -12,3 +12,5 @@ sort_3 = timeit.Timer("insertion_sort.insertion_sort(x.copy())", "from __main__ 
 print("insertion_sort:", sort_3.timeit(number=1), "seconds")
 sort_4 = timeit.Timer("shell_sort.shell_sort(x.copy())", "from __main__ import x;import shell_sort")
 print("shell_sort:", sort_3.timeit(number=1), "seconds")
+sort_5 = timeit.Timer("quick_sort.quick_sort(x.copy())", "from __main__ import x;import quick_sort")
+print("quick_sort:", sort_3.timeit(number=1), "seconds")
