@@ -18,7 +18,7 @@ def selection_sort(list_):
 #     return list_
 
 
-a = [1, 2, 4, 3, 5, 7, 6, 8, 10, 9, 12, 14, 13, 11, 1, 2, 3]
-# 传递a[:]，不会改变a的值
-print(selection_sort(a[:]))
-# print(a)
+# a = [1, 2, 4, 3, 5, 7, 6, 8, 10, 9, 12, 14, 13, 11, 1, 2, 3]
+# # 传递a[:]，不会改变a的值
+# print(selection_sort(a[:]))
+# # print(a)
