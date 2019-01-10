@@ -4,10 +4,10 @@
 ### 1. [视频学习](https://www.bilibili.com/video/av21540971?from=search&seid=7570693235743380114)
 ### 2. 参考两本书以及别人学习这两本书的相关博客
 
-#### python数据结构与算法(https://hujiaweibujidao.github.io/python/)
-#### 用python实现基本数据结构和算法(https://python-web-guide.readthedocs.io/zh/latest/algorithms/algorithms.html)
-#### Python数据结构(https://www.yiibai.com/python/py_data_structure)
-#### 北京大学python数据结构与算法课程(http://gis4g.pku.edu.cn/course/pythonds/#i-7)
+#### [[python数据结构与算法]](https://hujiaweibujidao.github.io/python/)
+#### [[用python实现基本数据结构和算法]](https://python-web-guide.readthedocs.io/zh/latest/algorithms/algorithms.html)
+#### [[Python数据结构]](https://www.yiibai.com/python/py_data_structure)
+#### [[北京大学python数据结构与算法课程]](http://gis4g.pku.edu.cn/course/pythonds/#i-7)
 
 ### 这两本书是：
 
