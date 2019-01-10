@@ -7,6 +7,6 @@
 
 ### 这两本书是：
 
-[Problem Solving with Algorithms and Data Structures using Python](http://interactivepython.org/runestone/static/pythonds/index.html)
+[Problem Solving with Algorithms and Data Structures using Python][英文版](http://interactivepython.org/runestone/static/pythonds/index.html)
 
-[Python Algorithms: mastering basic algorithms in the python language](http://index-of.es/Python/Python.Algorithms.pdf)
+[Python Algorithms: mastering basic algorithms in the python language][英文版](http://index-of.es/Python/Python.Algorithms.pdf)
