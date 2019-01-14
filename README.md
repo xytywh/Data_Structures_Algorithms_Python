@@ -13,4 +13,4 @@
 
 [Problem Solving with Algorithms and Data Structures using Python][[英文版]](http://interactivepython.org/runestone/static/pythonds/index.html)[[中文版]](https://facert.gitbooks.io/python-data-structure-cn/)
 
-[Python Algorithms: mastering basic algorithms in the python language][[英文版]](http://index-of.es/Python/Python.Algorithms.pdf)
+[Python Algorithms: mastering basic algorithms in the python language][[英文版]](http://index-of.es/Python/Python.Algorithms.pdf)[[中文版]](https://www.jqhtml.com/down/2540.html)
