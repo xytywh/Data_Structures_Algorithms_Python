@@ -11,7 +11,6 @@ class Stack():
     def pop(self):
         """弹出栈顶元素(并返回栈顶元素)"""
         if not self.__list:
-            pass
             return
         return self.__list.pop()
         # 代表从尾部操作，时间复杂度为O(1)
